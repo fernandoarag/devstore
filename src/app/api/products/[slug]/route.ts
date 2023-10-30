@@ -5,8 +5,6 @@ export async function GET(
   request: Request,
   { params }: { params: { slug: string } },
 ) {
-  console.log(params.slug)
-
   await new Promise((resolve) => setTimeout(resolve, 1000))
 
   const slug = z.string().parse(params.slug)
@@ -19,3 +17,5 @@ export async function GET(
 
   return Response.json(product)
 }
+
+// http://localhost:3000/products/:slug
